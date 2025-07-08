@@ -2,8 +2,8 @@ name: Auto Update Economic Calendar
 
 on:
   schedule:
-    - cron: '0 6 * * 0'  # Runs every Sunday at 6:00 UTC
-  workflow_dispatch:     # Allows manual trigger from GitHub UI
+    - cron: '0 6 * * 0'  # Every Sunday at 6am UTC
+  workflow_dispatch:  # Manual trigger option
 
 jobs:
   scrape-and-update:
