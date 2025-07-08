@@ -2,8 +2,8 @@ name: Auto Update Economic Calendar
 
 on:
   schedule:
-    - cron: '0 6 * * 0'  # Every Sunday at 6am UTC
-  workflow_dispatch:  # Manual trigger option
+    - cron: '0 23 * * *'  # Runs every day at 11:00 PM UTC (6:00 PM EST)
+  workflow_dispatch:       # Allows manual run from GitHub
 
 jobs:
   scrape-and-update:
@@ -28,5 +28,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add calendar.csv
-          git commit -m "Auto-update: Weekly economic calendar" || echo "No changes to commit"
+          git commit -m "Auto-update: Daily economic calendar at 6 PM EST" || echo "No changes to commit"
           git push
